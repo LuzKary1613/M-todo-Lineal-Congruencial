@@ -1,0 +1,20 @@
+def linear_congruential_generator(x0, a, c, m, n):
+    numbers = []
+    x = x0
+    for _ in range(n):
+        x = (a * x + c) % m
+        numbers.append(x / m)
+    return numbers
+
+# Parámetros del L.C.G.
+x0 = 6
+a = 32
+c = 3
+m = 80
+n = 10
+
+# Generar la secuencia de números pseudoaleatorios
+random_numbers = linear_congruential_generator(x0, a, c, m, n)
+
+# Imprimir los números generados
+print("Los números generados son:", random_numbers)
